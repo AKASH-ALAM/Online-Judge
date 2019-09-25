@@ -9,10 +9,10 @@ int main(){
     for(int i = 0; i < x; i++) {
         scanf("%d", arry+i);
     }
-    //input zero to end pointer address
+    //input a value from zero to end of pointer address
     for(int i = 0; i < x; i++){
         printf("%d\n", *(arry+i));
     }
-    //dereffarencing value from zero to end of the arry
+    //dereffarencing value from zero to end of the array
     return 0;
 }

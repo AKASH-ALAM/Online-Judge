@@ -5,45 +5,13 @@
             "label": "debug",
             "type": "shell",
             "command": "",
-<<<<<<< HEAD
-            "args": [
-                "g++",
-                "-g",
-                "${relativeFile}",
-                "-o",
-                "a.exe"
-            ]
-=======
             "args": ["g++","-g", "${relativeFile}", "-o","a.exe"]
->>>>>>> 2bf91253baa98ac9980fff413e9b9b0450bf8a8a
         },
         {
             "label": "Compile and run",
             "type": "shell",
             "command": "",
             "args": [
-<<<<<<< HEAD
-                "g++",
-                "-g",
-                "${relativeFile}",
-                "-o",
-                "${fileBasenameNoExtension}.out",
-                "&&",
-                "clear",
-                "&&",
-                "./${fileBasenameNoExtension}.out"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
-                ],
-=======
                 "g++","-g", "${relativeFile}", "-o","${fileBasenameNoExtension}.out", "&&", "clear" , "&&" , "./${fileBasenameNoExtension}.out"
             ],
             "group": {
@@ -53,7 +21,6 @@
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": ["relative", "${workspaceRoot}"],
->>>>>>> 2bf91253baa98ac9980fff413e9b9b0450bf8a8a
                 "pattern": {
                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 1,
@@ -63,11 +30,7 @@
                     "message": 5
                 }
             }
-<<<<<<< HEAD
-        }
-=======
         },
         
->>>>>>> 2bf91253baa98ac9980fff413e9b9b0450bf8a8a
     ]
 }

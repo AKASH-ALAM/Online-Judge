@@ -13,11 +13,11 @@ int is_prime(int arry[]){
         }
     }
     for(i = 3; i <= s; i = i + 2){
-            if( % i == 0){
+            if(2 % i == 0){
                 return 0;
             }
             return 1;
-        }
+    }
 }
 int main(){
     int t;

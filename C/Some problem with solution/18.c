@@ -1,6 +1,7 @@
 //18.Write a C program to enter P, T, R and calculate Compound Interest.
 
 #include <stdio.h>
+#include <math.h>
 int main()
 {
     float a,t,r,ci;
