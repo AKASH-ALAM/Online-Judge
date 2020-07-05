@@ -15,15 +15,15 @@ int main(){
     while(tmp--){
         s += ch;
         ch = ch + i;
-        if(ch == 'z'){
+        if(ch > 'z'){
             ch = 'a';
             i = 1;
         }
     }
-
-    for(int i = 0; i < n; i++){
-        if(s[i] == '\0') i = 0;
-        else cout << s[i];
+    
+    for(int i = 0, j = 0; i < n; i++, j++){
+        if(s[j] == '\0') j = 0;
+        cout << s[j];
     } cout << endl;
 
     return 0;
