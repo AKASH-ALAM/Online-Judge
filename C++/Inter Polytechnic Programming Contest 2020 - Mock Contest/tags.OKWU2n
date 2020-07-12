@@ -1,0 +1,12 @@
+main	A+B.cpp	/^int main(){$/;"	f
+main	Calculate The Sum.cpp	/^int main(){$/;"	f
+f91	McCarthys Recursive Function.cpp	/^int f91(int n){$/;"	f
+main	McCarthys Recursive Function.cpp	/^int main(){$/;"	f
+endl	Circle In A Square.cpp	2;"	d	file:
+pi	Circle In A Square.cpp	3;"	d	file:
+main	Circle In A Square.cpp	/^int main(){$/;"	f
+endl	Egypt.cpp	2;"	d	file:
+first_io	Egypt.cpp	3;"	d	file:
+main	Egypt.cpp	/^int main(){$/;"	f
+gcd	The Largest GCD.cpp	/^long long gcd(int a, int b){$/;"	f
+main	The Largest GCD.cpp	/^int main(){$/;"	f

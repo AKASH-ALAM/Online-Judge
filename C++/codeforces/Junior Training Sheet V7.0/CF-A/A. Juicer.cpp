@@ -8,7 +8,7 @@ int main(){
 
     long long n, b, d; 
     cin >> n >> b >> d;
-    long long m = n;
+    long long n;
     long long waste = 0;
     int count = 0;
     while(n--){
