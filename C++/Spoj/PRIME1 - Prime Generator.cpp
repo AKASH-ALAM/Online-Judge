@@ -1,26 +1,32 @@
 #include <bits/stdc++.h>
-using namespace std;
-using ll = long long;
+#define endl '\n'
+#define ll long long
 #define MAX 32000
-vector <ll> prime;
+#define Fast_io    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+using namespace std;
+
+vector <int> prime;
+bitset <MAX> is_prime;
+
 void sieve(){
-    prime.push_back(2);
-    bool is_prime[MAX];
-    for(int i = 0; i < MAX; i++) is_prime[i] = true;
     for(int i = 3; i <= MAX; i += 2){
-        if(is_prime[i]){
-            prime.push_back(i);
-            for(int j = i * i; j <= MAX; j += i+i){
-                is_prime[j] = false;
+        if(is_prime[i] == false){
+            for(int j = i * i; j <= MAX; j += 2 * i){
+                is_prime[j] = true;
             }
         }
     }
+    prime.push_back(2);
+    for(int i = 3; i < MAX; i += 2){
+        if(is_prime[i] == false) prime.push_back(i);
+    }  
 }
 
 void segSieve(ll l, ll r){
+    if(l == 1) l = 2;
     bool array[r-l+1];
     for(int i = 0; i < r-l+1; i++) array[i] = true;
-    if(l == 1) array[0] = false;
+   
     for(int i = 0; prime[i] * prime[i] <= r; i++){
         int cp = prime[i];
         int base = (l/cp) * cp;
@@ -34,9 +40,9 @@ void segSieve(ll l, ll r){
         if(array[i]) cout << (i+l) << endl;
     } cout << endl;
 }
+
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL), cout.tie(NULL);
+    Fast_io;
 
     sieve();
     int t;  cin >> t;
