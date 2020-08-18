@@ -1,3 +1,6 @@
+/**
+ *    Author:  AKASH-ALAM       
+**/
 #include <bits/stdc++.h>
 #define endl        '\n'
 #define pi          2*acos(0.0)
@@ -14,29 +17,9 @@
 #define Fast_io    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 #define MAX 32001
 using namespace std;
- 
-bitset<MAX> marked;
-vector<int> primes;
- 
-void sieve() {
-    for (int i = 3; i * i <= MAX; i += 2) {
-        if(marked[i] == false) {
-            for (int j = i * i; j <= MAX; j += 2 * i) {
-                marked[j] = true;
-            }
-        }
-    }
-    primes.push_back(2);
-    for (int i = 3; i <= MAX; i += 2) {
-        if(marked[i] == false)
-            primes.push_back(i);
-    }
-}
- 
-int main()
-{
-    Fast_io;
-    sieve();
 
+int main(){
+    Fast_io;
+    
     return 0;
 }

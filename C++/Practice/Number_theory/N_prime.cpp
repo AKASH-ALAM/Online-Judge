@@ -15,7 +15,7 @@ bool is_prime(int n){
 void seive(int n){
     for(int i = 3; i * i <= n; i += 2){
         if(marked[i] == false){
-            for(int j = i * i; j <= n; j += i + i){
+            for(int j = i * i; j <= n; j += 2*i){
                 marked[j] = true;
             }
         }

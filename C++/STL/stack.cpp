@@ -9,8 +9,8 @@ int main(){
 
     while(!s.empty()){
         string x;
-        x = s.top();
-        cout << x << endl;
+        //x = s.top();
+        cout << s.top() << endl;
         s.pop();
     }
 

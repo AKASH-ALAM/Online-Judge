@@ -1,3 +1,6 @@
+/**
+ *    Author:  AKASH-ALAM       
+**/
 #include <bits/stdc++.h>
 #define endl        '\n'
 #define pi          2*acos(0.0)
@@ -15,21 +18,18 @@
 #define MAX 32001
 using namespace std;
 
-int main()
-{
+int main(){
     Fast_io;
-    int n;  cin >> n;
-    char *s = (char*) malloc(sizeof(char) * n);
-    for(int i = 0; i < n; i++) cin >> s[i];
-    int a[10];
-    for(int i = 0; i < 9; i++) cin >> a[i];
+    int k;  cin >> k;
+    int *gruop = (int*) malloc(sizeof(int) * k);
+    for(int i = 0; i < k; i++) cin >> gruop[i];
+    sort(gruop, gruop+k);
+    int minimul_supporter = 0;
     
-    for(int i = 0; i < n; i++){
-        int x = (int) s[i] - 48;
-        if(a[x-1] > x) cout << a[x-1];
-        else cout << x;
-        
+    for(int i = 0; i < (k/2) + 1; i++) {
+        minimul_supporter += (gruop[i]/2) + 1;
+    }
 
-    } cout << endl;
+    cout << minimul_supporter << endl;
     return 0;
 }

@@ -14,22 +14,18 @@
 #define Fast_io    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 #define MAX 32001
 using namespace std;
+ 
 
+ 
 int main()
 {
     Fast_io;
-    int n;  cin >> n;
-    char *s = (char*) malloc(sizeof(char) * n);
-    for(int i = 0; i < n; i++) cin >> s[i];
-    int a[10];
-    for(int i = 0; i < 9; i++) cin >> a[i];
-    
-    for(int i = 0; i < n; i++){
-        int x = (int) s[i] - 48;
-        if(a[x-1] > x) cout << a[x-1];
-        else cout << x;
-        
+    int t;  cin >> t;
+    while(t--){
+        int n;  cin >> n;
+        if(n == 1) cout << n << endl;
+        else cout << (n/2) * 2 << endl;
+    }
 
-    } cout << endl;
     return 0;
 }

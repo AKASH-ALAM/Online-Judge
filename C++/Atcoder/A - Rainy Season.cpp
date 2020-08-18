@@ -1,3 +1,6 @@
+/**
+ *    Author:  AKASH-ALAM       
+**/
 #include <bits/stdc++.h>
 #define endl        '\n'
 #define pi          2*acos(0.0)
@@ -15,21 +18,14 @@
 #define MAX 32001
 using namespace std;
 
-int main()
-{
+int main(){
     Fast_io;
-    int n;  cin >> n;
-    char *s = (char*) malloc(sizeof(char) * n);
-    for(int i = 0; i < n; i++) cin >> s[i];
-    int a[10];
-    for(int i = 0; i < 9; i++) cin >> a[i];
-    
-    for(int i = 0; i < n; i++){
-        int x = (int) s[i] - 48;
-        if(a[x-1] > x) cout << a[x-1];
-        else cout << x;
-        
-
-    } cout << endl;
+    char s[3];  cin >> s;
+    int count = 0;
+    for(int i = 0; i < 3; i++){
+        if(s[i] == 'R') count++;
+    }
+    if(s[1] == 'S' && count != 1 && count != 0) count--;
+    cout << count << endl;
     return 0;
 }
