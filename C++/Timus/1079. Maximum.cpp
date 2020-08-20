@@ -20,13 +20,21 @@ using namespace std;
 
 int main(){
     Fast_io;
-    char s[3];  cin >> s;
-    int count = 0;
-    for(int i = 0; i < 3; i++){
-        if(s[i] == 'R') count++;
+    int n;
+    //Stern-Brocot Sequence
+    while(cin >> n && n != 0){
+        vector <int> v;
+        v.push_back(1);
+        v.push_back(1);
+        n = n - 2;
+        for(int i = 0; i < n; i++){
+            v.push_back(v[i] + v[i+1]);
+            if(i == n - 1) break;
+            v.push_back(v[i+1]);
+            n--;
+        }
+        sort(v.begin(), v.end());
+        cout << *(v.end() - 1)<< endl;
     }
-    if(s[1] == 'S' && count != 1 && count != 0) count--;
-    cout << count << endl;
     return 0;
-}
 }

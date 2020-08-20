@@ -20,13 +20,13 @@ using namespace std;
 
 int main(){
     Fast_io;
-    char s[3];  cin >> s;
-    int count = 0;
-    for(int i = 0; i < 3; i++){
-        if(s[i] == 'R') count++;
+    int n;  cin >> n;
+    int array[(n*n)+1];
+    for(int i = 0; i < n*n; i++){
+        cin >> array[i];
     }
-    if(s[1] == 'S' && count != 1 && count != 0) count--;
-    cout << count << endl;
+    sort(array, array+(n*n));
+    for(int i = 0; i < n*n; i++) cout << array[i] << ' ';
+    cout << endl;
     return 0;
-}
 }

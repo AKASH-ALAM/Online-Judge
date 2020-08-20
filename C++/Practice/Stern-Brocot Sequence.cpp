@@ -2,7 +2,7 @@
  *    Author:  AKASH-ALAM       
 **/
 #include <bits/stdc++.h>
-#define endl        '\n'
+//#define endl        '\n'
 #define pi          2*acos(0.0)
 #define pb(a)       push_back(a)
 #define db          double
@@ -20,13 +20,24 @@ using namespace std;
 
 int main(){
     Fast_io;
-    char s[3];  cin >> s;
-    int count = 0;
-    for(int i = 0; i < 3; i++){
-        if(s[i] == 'R') count++;
+    int n;
+    while(cin >> n && n != 0){
+        vector <int> v;
+        vector <int>::iterator it;
+
+        v.push_back(1);
+        v.push_back(1);
+        n = n - 2;
+        for(int i = 0; i < n; i++){
+            v.push_back(v[i] + v[i+1]);
+            if(i == n - 1) break;
+            v.push_back(v[i+1]);
+            n--;
+        }
+
+        for(it = v.begin(); it != v.end(); it++){
+            cout << *it << " ";
+        } cout << endl;
     }
-    if(s[1] == 'S' && count != 1 && count != 0) count--;
-    cout << count << endl;
     return 0;
-}
 }
