@@ -20,28 +20,17 @@ using namespace std;
 
 int main(){
     Fast_io;
-    int n;  cin >> n;
-    int array[n][n];
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++) cin >> array[i][j];
+    int n;
+    vector <int> v;
+    vector <int>::iterator it;
+
+    while(cin >> n &&  n != 42){
+        v.push_back(n);
     }
-    int r = 0, c = 0;
-    for(int i = 0; i < n; i++){
-        r = i, c = 0;
-        while(r >= 0){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-        
+
+    //sort(v.begin(), v.end());
+    for(it = v.begin(); it != v.end(); it++){
+        cout << *it << endl;
     }
-    
-    for(int i = 1; i < n; i++){
-        r = n - 1, c = i;
-        while(c <= n-1){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-    } cout << endl;
-    
     return 0;
 }

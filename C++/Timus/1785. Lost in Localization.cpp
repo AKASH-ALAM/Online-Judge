@@ -21,27 +21,16 @@ using namespace std;
 int main(){
     Fast_io;
     int n;  cin >> n;
-    int array[n][n];
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++) cin >> array[i][j];
-    }
-    int r = 0, c = 0;
-    for(int i = 0; i < n; i++){
-        r = i, c = 0;
-        while(r >= 0){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-        
-    }
-    
-    for(int i = 1; i < n; i++){
-        r = n - 1, c = i;
-        while(c <= n-1){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-    } cout << endl;
-    
+
+    if(n <= 4) cout << "few" << endl;
+    else if(n <= 9) cout << "several" << endl;    
+    else if(n <= 19) cout << "pack" << endl;    
+    else if(n <= 49) cout << "lots" << endl;    
+    else if(n <= 99) cout << "horde" << endl;    
+    else if(n <= 249) cout << "throng" << endl;    
+    else if(n <= 499) cout << "swarm" << endl;    
+    else if(n <= 999) cout << "zounds" << endl;    
+    else cout << "legion" << endl;    
+
     return 0;
 }

@@ -20,28 +20,8 @@ using namespace std;
 
 int main(){
     Fast_io;
-    int n;  cin >> n;
-    int array[n][n];
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++) cin >> array[i][j];
-    }
-    int r = 0, c = 0;
-    for(int i = 0; i < n; i++){
-        r = i, c = 0;
-        while(r >= 0){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-        
-    }
-    
-    for(int i = 1; i < n; i++){
-        r = n - 1, c = i;
-        while(c <= n-1){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-    } cout << endl;
-    
+    int a, b, c, d, e, f;
+    cin >> a >> b >> c >> d >> e >> f;
+    cout << abs(a-e) << " " << abs(b-d) << endl;
     return 0;
 }

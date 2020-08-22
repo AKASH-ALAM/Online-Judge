@@ -14,34 +14,27 @@
 #define sqr(x)      (x) * (x)
 #define gcd(a, b)   __gcd(a, b)
 #define lcm(a, b)   ((a/gcd(a,b)) * b) 
+#define lcm(a, b)   ((a/gcd(a,b)) * b) 
 #define Fast_io    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 #define MAX 32001
 using namespace std;
 
 int main(){
     Fast_io;
-    int n;  cin >> n;
-    int array[n][n];
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++) cin >> array[i][j];
-    }
-    int r = 0, c = 0;
-    for(int i = 0; i < n; i++){
-        r = i, c = 0;
-        while(r >= 0){
-            cout << array[r][c] << " ";
-            r--, c++;
+    int k, n, sum = 0;
+    cin >> k >> n;
+    int *array = (int*) malloc(sizeof(int) * n);
+    for(int i = 0; i < n; i++) cin >> array[i];
+    for(int i = 0; i < n-1; i++){
+        if(array[i] > k){
+            array[i] = array[i] - k;
+            array[i+1] += array[i];
         }
-        
     }
-    
-    for(int i = 1; i < n; i++){
-        r = n - 1, c = i;
-        while(c <= n-1){
-            cout << array[r][c] << " ";
-            r--, c++;
-        }
-    } cout << endl;
-    
+    /* for(int i = 0; i < n; i++) cout << array[i] << " ";
+    cout << endl; */
+    if(array[n-1] > k) cout << array[n-1] - k << endl;
+    else cout << 0 << endl;
     return 0;
 }
+
