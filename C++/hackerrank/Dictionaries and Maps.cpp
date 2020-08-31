@@ -9,20 +9,18 @@
 using namespace std;
 
 int main(){
-    int n, t; 
+    int n;
     cin >> n;
-    t = n;
-    map <string, int> m;
+    map <string, long> m;
+    map <string, long>::iterator it;
     while(n--){
-        string name; int number;
+        string name; long number;
         cin >> name >> number;
         m.insert(make_pair(name, number));
     }
 
-    map <string, int>::iterator it;
-
-    while(t--){
-        string name; cin >> name;
+    string name;
+    while(cin >> name){
         it = m.find(name);
         if(it != m.end()){
             cout << it->first << "=" << it->second << endl;
