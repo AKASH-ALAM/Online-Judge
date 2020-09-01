@@ -1,6 +1,11 @@
 
 sort(arr, arr+n, greater<int>());
+sort(s2.begin(), s2.end(), greater<char>());
 //sort by descending order
+
+cout << fixed << setprecision(6) << endl;
+<!-- With <iomanip>, you can use std::fixed and std::setprecision
+Printing the correct number of decimal points with cout -->
 
     char c, s[100], line[1000];
     scanf("%c", &c);
