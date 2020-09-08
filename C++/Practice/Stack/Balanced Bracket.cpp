@@ -26,25 +26,16 @@ using namespace std;
 
 bool is_balanced(string input){
     if(input[0] == ')' || input[0] == '}' || input[0] == ']') return false;
-    if(input[0] != '(' || input[0] != '{' || input[0] != '['){
+    if(input[0] != '(' && input[0] != '{' && input[0] != '['){
         cout << "Invalid input!" << endl;
         exit(0);
     } 
     string prnths, crly, sqr;
     int p = 0, c = 0, q = 0;
     for(int i = 0; i < input.size(); i++){
-        if(input[i] == '('){
-            prnths[p] = input[i];
-            p++;
-        }
-        else if(input[i] == '{'){
-            crly[c] = input[i];
-            c++;
-        }
-        else if(input[i] == '['){
-            sqr[q] = input[i];
-            q++;
-        }
+        if(input[i] == '(') prnths[p++] = input[i];
+        else if(input[i] == '{') crly[c++] = input[i];
+        else if(input[i] == '[') sqr[q++] = input[i];
         else {
             if(input[i] == ')') p--;
             else if(input[i] == '}') c--;
