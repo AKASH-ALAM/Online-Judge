@@ -24,7 +24,7 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
-void getINdex(vector <int> v, int value){
+/* void getINdex(vector <int> v, int value){
     auto it = find(v.begin(), v.end(), value);
     if(it != v.end()){
         cout << "Yes " << distance(v.begin(), it) + 1<< endl;
@@ -37,7 +37,7 @@ void getINdex(vector <int> v, int value){
             }
         }
     }
-}
+} */
 
 int main(){
     Fast_io;
@@ -46,8 +46,10 @@ int main(){
     for(int i = 0; i < n; i++) cin >> v[i];
     int q;  cin >> q;
     while(q--){
-        int i;  cin >> i;
-        getINdex(v, i);
+        int value;  cin >> value;
+        auto it = lower_bound(v.begin(), v.end(), value);
+        if(v[it - v.begin()] == value) cout << "Yes " << it - v.begin()+1 << endl;
+        else cout << "No " << it - v.begin()+1 << endl;
     }
     return 0;
 }
