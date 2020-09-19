@@ -24,8 +24,30 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
+void getINdex(vector <int> v, int value){
+    auto it = find(v.begin(), v.end(), value);
+    if(it != v.end()){
+        cout << "Yes " << distance(v.begin(), it) + 1<< endl;
+    }
+    else {
+        for(auto it = v.begin(); it != v.end(); it++){
+            if(*it > value){
+                cout << "No " << distance(v.begin(), it) + 1<< endl;
+                break;
+            }
+        }
+    }
+}
+
 int main(){
     Fast_io;
-    
+    int n;  cin >> n;
+    vector <int> v(n);
+    for(int i = 0; i < n; i++) cin >> v[i];
+    int q;  cin >> q;
+    while(q--){
+        int i;  cin >> i;
+        getINdex(v, i);
+    }
     return 0;
 }
