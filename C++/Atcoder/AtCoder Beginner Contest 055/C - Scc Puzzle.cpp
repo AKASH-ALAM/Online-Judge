@@ -24,23 +24,16 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
-//tag1.tag2~name
-
 int main(){
     Fast_io;
-    //string s;   getline(cin, s);
-    string q;   getline(cin, q);
-    string tag, valORname;
-    bool a = false, b = false;
-    for(int i = 0; i < q.size() - 2; i++){
-        if(q[i] == '.') a = true;
-        if(q[i+1] == '~'){
-            a = false;
-            b = true;
-        } 
-        if(a == true) tag += q[i+1];
-        else if(b == true) valORname += q[i+2];
-    }
-    cout << tag << " " << valORname << endl;
+    long long n, m;  cin >> n >> m;
+    long long s = n, c = m;
+    n = n * 2;
+    m = m - n;
+    m = m / 4;
+    long long cnt = m + s;
+    if(c < 2) cnt = 0;
+    if(s >= c) cnt = c / 2;
+    cout << cnt << endl;
     return 0;
 }
