@@ -3,6 +3,9 @@ sort(arr, arr+n, greater<int>());
 sort(s2.begin(), s2.end(), greater<char>());
 //sort by descending order
 
+freopen("input.txt", "r", stdin);
+//input from file.
+
 cout << fixed << setprecision(6) << endl;
 <!-- With <iomanip>, you can use std::fixed and std::setprecision
 Printing the correct number of decimal points with cout -->
