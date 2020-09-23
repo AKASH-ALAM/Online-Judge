@@ -24,19 +24,11 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
-int main(){
-    Fast_io;
-    int n;  cin >> n;
-    string s;   cin >> s;
-    int k;  cin >> k;
+string caesarCipher(string s, int k){
     for(int i = 0; i < s.size(); i++){
         if(!(s[i] >= 'a' && s[i] <= 'z') && !(s[i] >= 'A' && s[i] <= 'Z')) continue;
-        else if(((s[i] + k) <= 122) && (s[i] >= 'a' && s[i] <= 'z')){
-            s[i] += k;
-        }
-        else if(((s[i] + k) <= 90) && (s[i] >= 'A' && s[i] <= 'Z')){
-            s[i] += k;
-        }
+        else if(((s[i] + k) <= 122) && (s[i] >= 'a' && s[i] <= 'z')) s[i] += k;
+        else if(((s[i] + k) <= 90) && (s[i] >= 'A' && s[i] <= 'Z')) s[i] += k;
         else {
             int ch;
             if(s[i] >= 'a' && s[i] <= 'z'){
@@ -51,6 +43,15 @@ int main(){
             } 
         }
     }
+    return s;
+}
+
+int main(){
+    Fast_io;
+    int n;  cin >> n;
+    string s;   cin >> s;
+    int k;  cin >> k;
+    s = caesarCipher(s, k);
     cout << s << endl;
     return 0;
 }
