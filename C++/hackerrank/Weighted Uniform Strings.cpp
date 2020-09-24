@@ -53,7 +53,7 @@ string weightedUniformStrings(string s, int q){
         }
     }
     return ans;
-}
+}//GOT TLE
 int main(){
     Fast_io;
     string s, ans;   cin >> s;
