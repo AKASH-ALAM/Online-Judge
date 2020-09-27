@@ -23,35 +23,26 @@ const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
-
+int theLoveLetterMystery(string s){
+    string ss = s;
+    reverse(ss.begin(), ss.end());
+    int cnt = 0;
+    if(s == ss) cnt = 0;
+    else {
+        for(int i = 0, j = s.size() - 1; j >= i; i++, j--){
+            if(s[i] != s[j]) cnt += abs(s[j] - s[i]);
+        }
+    }
+    return cnt;
+}
 int main(){
     Fast_io;
     int n;  cin >> n;
-    string s[n];
-    for(int i = 0; i < n; i++){
-        cin >> s[i];
+    string s;
+    while(n--){
+        cin >> s;
+        int check = theLoveLetterMystery(s);
+        cout << check << endl;
     }
-    string unMatch;
-    for(int i = 1; i < n; i++){
-        for(int j = 0; j < s[0].size(); j++){
-            size_t it = s[i].find(s[0][j]);
-            if(it == string::npos){
-                unMatch += s[0][j]; // you can erase here but don't give you AC
-            } 
-        }
-    }
-    for(int i = 0; i < unMatch.length(); i++){
-        for(int j = 0; j < s[0].size(); j++){
-            if(unMatch[i] == s[0][j]) s[0].erase(j, 1);
-        }
-    }
-    for(int i = 0; i < s[0].size(); i++){
-        for(int j = i + 1; j < s[0].size(); j++){
-            if(s[0][i] == s[0][j]) s[0].erase(j, 1);
-        }
-    }
-    cout << endl;
-    cout << s[0] << endl;
-    cout << s[0].size() << endl;
     return 0;
 }
