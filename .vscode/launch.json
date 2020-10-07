@@ -5,6 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - Welcome",
+            "request": "launch",
+            "mainClass": "Welcome"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SuperAndSub",
+            "request": "launch",
+            "mainClass": "SuperAndSub",
+            "projectName": "Super class to sub class"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Prime_number/Prime",
+            "request": "launch",
+            "mainClass": "Prime_number/Prime",
+            "projectName": "Prime_number"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Bigone",
+            "request": "launch",
+            "mainClass": "Bigone",
+            "projectName": "Big"
+        },
+        {
             "name": "g++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
