@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JULKA",
+            "request": "launch",
+            "mainClass": "Spoj.JULKA",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Multiplication",
+            "request": "launch",
+            "mainClass": "Spoj.Multiplication",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solution",
+            "request": "launch",
+            "mainClass": "Spoj.Solution",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MUL_Fast_Multiplication",
+            "request": "launch",
+            "mainClass": "Spoj.MUL_Fast_Multiplication",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Big_Calculation",
+            "request": "launch",
+            "mainClass": "Big_Calculation",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - hello",
             "request": "launch",
             "mainClass": "hello"
