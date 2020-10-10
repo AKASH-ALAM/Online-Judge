@@ -16,5 +16,31 @@ int main(){
         q.pop();
     }
 
+    priority_queue <int> pq;
+    pq.push(2);
+    pq.push(3);
+    pq.push(4);
+    pq.push(1);
+    pq.push(10);
+    pq.pop(); // 10
+    pq.pop(); // 4
+
+    while(!pq.empty()) {
+        cout << pq.top() << endl;
+        pq.pop();
+    }
+            cout << endl;
+    priority_queue <int, vector <int>, greater <int>> pv;
+    pv.push(2);
+    pv.push(1);
+    pv.push(3);
+    pv.push(0);
+    pv.push(5);
+
+    while(!pv.empty()) {
+        cout << pv.top() << endl;
+        pv.pop();
+    }
+
     return 0;
 }
