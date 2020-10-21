@@ -41,7 +41,9 @@ int main(){
     int a, b;
     while(cin >> a >> b){
         int maxlen = 0;
-        for(int i = a; i <= b; i++){
+        int s = min(a, b);
+        int e = max(a, b);
+        for(int i = s; i <= e; i++){
             int len = cycle_length(i);
             if(len > maxlen) maxlen = len;
         }
