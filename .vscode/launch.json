@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Hello",
+            "request": "launch",
+            "mainClass": "java.vjudge.Hello",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LargeDivision",
+            "request": "launch",
+            "mainClass": "java.vjudge.LargeDivision",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Recurrence",
             "request": "launch",
             "mainClass": "Spoj.Recurrence",
