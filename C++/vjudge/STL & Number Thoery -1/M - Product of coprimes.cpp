@@ -26,39 +26,12 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
-ll N(ll b, ll p){
-    if(p == 0) return 1;
-    if(p % 2 == 0){
-        ll ret = N(b, p/2);
-        return (ret * ret) % MOD; 
-    }
-    else return (b  * N(b, p-1)) % MOD;
-}
-
-ll divisor_sum(ll n){
-    ll sum = 0, size = sqrt(n)+1;
-    set <ll> s;
-    for(ll i = 1; i <= size; i++){
-        if(n % i == 0){
-            s.insert(i);
-            s.insert(n/i);
-        }
-    }
-    for(auto x : s) {
-        sum = (sum + x) % MOD;
-    }
-    return sum;
-}
-
 int main(){
-    //Fast_io;
-    ll t;  cin >> t;
-    for(ll i = 1; i <= t; i++){
-        ll n, m;   cin >> n >> m;
-        ll result = N(n, m);
-        result = divisor_sum(result);
-        cout << "Case " << i << ": ";
-        cout << result % MOD << endl;
+    Fast_io;
+    ll m, p = 1;   cin >> m;
+    for(ll i = 2; i < m; i++){
+        if(m % i != 0) p = ((p % m) * (i % m)) % m;
     }
+    cout << p % m<< endl;
     return 0;
 }

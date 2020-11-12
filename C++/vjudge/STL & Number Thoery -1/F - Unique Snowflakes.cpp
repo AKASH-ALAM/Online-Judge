@@ -31,12 +31,100 @@ int main(){
     int t;  cin >> t;
     while(t--){
         int n;  cin >> n;
-        set <int> s;
+        vector <int> s;
         for(int i = 0; i < n; i++){
             int a;  cin >> a;
-            s.insert(a);
+            s.push_back(a);
         }
-        cout << "Ans : " << s.size() << endl;
+        int cnt = 0, big = 0;
+        for(auto it = s.begin(); it != s.end(); it++){
+            auto check = find(it+1, s.end(), *it);
+            if(check != s.end()) cnt++;
+            else {
+                if(cnt > big) {
+                    big = cnt;
+                    cnt = 0;
+                }
+            }
+        }
+        if(cnt > big) big = cnt;
+        cout << big << endl;
     }
     return 0;
 }
+/* 
+12
+    5
+1
+2
+3
+2
+1
+    1
+0
+    12
+7
+4
+0
+9
+4
+8
+8
+2
+4
+5
+5
+1
+    2
+1
+1
+    5
+134
+134
+135
+136
+136
+    7
+132
+132
+123
+132
+123
+144
+566
+    0
+    1
+333
+    7
+22
+22
+22
+23
+22
+23
+23
+    5
+132
+132
+132
+132
+132
+    6
+1 
+2 
+3 
+2 
+4 
+5
+    11
+1 
+2
+3 
+5 
+11 
+12 
+444 
+2 
+6 
+7 
+15 */

@@ -27,27 +27,18 @@ const ll INF = 1e18;
 using namespace std;
 
 bool cmp(string a, string b){
-    return lexicographical_compare(a.begin(), a.end(), b.begin(), b.end());
+    return a + b < b + a;
 }
 
 int main(){
     int t;  cin >> t;
-    vector < pair <string, string> >p;
+    vector <string> p;
     while(t--){
-        string s, tmp;   cin >> s;
-        tmp = s;
-        sort(tmp.begin(), tmp.end());
-        p.push_back(make_pair(s, tmp));
+        string s;   cin >> s;
+        p.push_back(s);
     }
-    for(int i = 0; i < p.size(); i++){
-        for(int j = 0; j < p.size()-1; j++){
-            if(!lexicographical_compare(p[j].second.begin(), p[j].second.end(), p[j+1].second.begin(), p[j+1].second.end())){
-                swap(p[i].first, p[j+1].first);
-                swap(p[i].second, p[j+1].second);
-            }
-        }
-    }
-    for(auto x : p) cout << x.first;
+    sort(p.begin(), p.end(), cmp);
+    for(auto x : p) cout << x;
     cout << endl;
     return 0;
 }

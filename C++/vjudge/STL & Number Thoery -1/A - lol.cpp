@@ -34,7 +34,6 @@ int main(){
         backward.push("http://www.lightoj.com/");
         string query, url, curr_page;
         cout << "Case " << i << ":" << endl;
-
         while(cin >> query and query != "QUIT"){
             if(query == "VISIT") {
                 cin >> url;

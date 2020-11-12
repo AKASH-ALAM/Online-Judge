@@ -27,39 +27,39 @@ const ll INF = 1e18;
 using namespace std;
 
 int main(){
-    Fast_io;
+    //Fast_io;
     int t;  cin >> t;
     for(int i = 1; i <= t; i++){
 		cout << "Case " << i << ":" << endl;
         int n, m;   cin >> n >> m;
         deque <int> dq;
-        for(int j = 0; j <= m; j++){
+        for(int j = 0; j < m; j++){
 			string s;   int item;   cin >> s;
             if(s == "pushLeft"){
+                cin >> item;
                 if((int) dq.size() == n) cout << "The queue is full" << endl;
                 else {
-                    cin >> item;
                     cout << "Pushed in left: " << item << endl;
                     dq.push_front(item);
                 }
             }
             else if(s == "pushRight"){
+                cin >> item;
                 if((int) dq.size() == n) cout << "The queue is full" << endl;
                 else{
-                    cin >> item;
                     cout << "Pushed in right: " << item << endl;
                     dq.push_back(item);
                 } 
             }
             else if(s == "popLeft"){
-                if(dq.empty()) cout << "The queue is empty";
+                if(dq.empty()) cout << "The queue is empty" << endl;
                 else {
                     cout << "Popped from left: " << dq.front() << endl;
                     dq.pop_front();
                 }
             }
             else if(s == "popRight"){
-                if(dq.empty()) cout << "The queue is empty";
+                if(dq.empty()) cout << "The queue is empty" << endl;
                 else {
                     cout << "Popped from right: " << dq.back() << endl;
                     dq.pop_back();
@@ -69,4 +69,3 @@ int main(){
     }
     return 0;
 }
-

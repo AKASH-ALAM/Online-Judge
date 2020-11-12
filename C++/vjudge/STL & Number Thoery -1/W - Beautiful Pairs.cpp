@@ -26,39 +26,24 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
-ll N(ll b, ll p){
-    if(p == 0) return 1;
-    if(p % 2 == 0){
-        ll ret = N(b, p/2);
-        return (ret * ret) % MOD; 
-    }
-    else return (b  * N(b, p-1)) % MOD;
-}
-
-ll divisor_sum(ll n){
-    ll sum = 0, size = sqrt(n)+1;
-    set <ll> s;
-    for(ll i = 1; i <= size; i++){
-        if(n % i == 0){
-            s.insert(i);
-            s.insert(n/i);
+int main(){
+    Fast_io;
+    int n;  cin >> n;
+    vector <int> a(n), b(n);
+    for(int i = 0; i < n; i++) cin >> a[i]; 
+    for(int i = 0; i < n; i++) cin >> b[i]; 
+    int cnt = 0;
+    for(auto it = a.begin(); it != a.end(); it++){
+        auto it2 = find(b.begin(), b.end(), *it);
+        if(it2 != b.end()){
+            a.erase(it);
+            b.erase(it2);
+            it--, it2--;
+            cnt++;
         }
     }
-    for(auto x : s) {
-        sum = (sum + x) % MOD;
-    }
-    return sum;
-}
-
-int main(){
-    //Fast_io;
-    ll t;  cin >> t;
-    for(ll i = 1; i <= t; i++){
-        ll n, m;   cin >> n >> m;
-        ll result = N(n, m);
-        result = divisor_sum(result);
-        cout << "Case " << i << ": ";
-        cout << result % MOD << endl;
-    }
+    if(cnt == n) cnt--;
+    if(b.size() >= 1) cnt++;
+    cout << cnt << endl;
     return 0;
 }
