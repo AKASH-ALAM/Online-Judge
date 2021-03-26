@@ -2,6 +2,6 @@
 using namespace std;
 
 int main(){
-   
-    return 0;
+    int n;  cin >> n;
+    for(int i = )
 }
